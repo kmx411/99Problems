@@ -1,0 +1,9 @@
+#!/bin/bash
+#Give a RE for lines starting with abc and ending with xyx
+grep "^abc.*xyz$"
+
+#Give an RE for lines matching foo atleast 5 times in a row or matching bar more than once in a row
+grep "(foo){5,}|(bar)+"
+
+#Give a RE for lines consisting of characters not in the set {a,b,c,t,j,4,8,w}
+grep "^[^abctj48w]+$"

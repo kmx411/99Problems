@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if test "${1}" = 'add'; then
+  echo "${2}" >> todoList.txt
+fi
+
+if test "${1}" = 'finish'; then
+  LINECONTENT=`sed -n "${2}p" todoList.txt`
+  grep -v "$LINECONTENT" ./todoList.txt > temp && mv temp ./todoList.txt
+fi
+
+cat todoList.txt
